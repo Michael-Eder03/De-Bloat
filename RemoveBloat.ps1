@@ -9,7 +9,6 @@
 .Removes Dell Bloat
 .Removes Lenovo Bloat
 .Windows 10 and Windows 11 Compatible
-.Removes any unwanted installed applications
 .Removes unwanted services and tasks
 .Removes Edge Surf Game
 
