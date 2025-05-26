@@ -1511,8 +1511,6 @@ Invoke-WebRequest -Uri $odturl -OutFile $odtdestination -Method Get -UseBasicPar
 
 ##Run it
 Start-Process -FilePath "C:\ProgramData\Debloat\setup.exe" -ArgumentList "/configure C:\ProgramData\Debloat\o365.xml" -WindowStyle Hidden -Wait
-
-}
 else {
     write-output "Intune detected, skipping removal of apps"
     write-output "$intunecomplete number of apps detected"
