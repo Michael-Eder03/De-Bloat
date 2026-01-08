@@ -11,15 +11,28 @@ Else {
 
 $templateFilePath = "C:\ProgramData\Debloat\removebloat.ps1"
 
-Invoke-WebRequest `
--Uri "https://raw.githubusercontent.com/Michael-Eder03/De-Bloat/main/RemoveBloat.ps1" `
--OutFile $templateFilePath `
--UseBasicParsing `
--Headers @{"Cache-Control"="no-cache"}
+$zipUrl = "https://github.com/Michael-Eder03/De-Bloat/releases/download/DeBloat/RemoveBloat.zip"
+$zipPath = "$templateFilePath\RemoveBloat.zip"
+$extractPath = "$templateFilePath"
 
+Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath
+Expand-Archive -Path $zipPath -DestinationPath $extractPath -Force
 
-##Populate between the speechmarks any apps you want to whitelist, comma-separated
-$arguments = ' -customwhitelist ""'
+# Define apps to whitelist (comma-separated)
+$whitelistApps = ""
 
+# Define scheduled tasks to remove (empty by default).  Comma separated
+$tasksToRemove = @() -join ','
 
-invoke-expression -Command "$templateFilePath $arguments"
+# Build the arguments string with both parameters
+$arguments = " -customwhitelist `"$whitelistApps`""
+
+# Only add the TasksToRemove parameter if there are tasks to remove
+if ($tasksToRemove) {
+    $arguments += " -TasksToRemove `"$tasksToRemove`""
+}
+
+$pathwithfile = "$templateFilePath\removebloat.ps1"
+
+# Execute the script with parameters
+invoke-expression -Command "$pathwithfile $arguments"
