@@ -1155,7 +1155,7 @@ foreach ($pattern in $packagePatterns) {
         }
     }
 }
-
+}
 
 if ($manufacturer -like "*Dell*") {
     write-output "Dell detected"
