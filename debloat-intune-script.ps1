@@ -21,11 +21,14 @@ Expand-Archive -Path $zipPath -DestinationPath $extractPath -Force
 # Define apps to whitelist (comma-separated)
 $whitelistApps = ""
 
+# Define apps to bloat (comma-separated)
+$bloatApps = ""
+
 # Define scheduled tasks to remove (empty by default).  Comma separated
 $tasksToRemove = @() -join ','
 
 # Build the arguments string with both parameters
-$arguments = " -customwhitelist `"$whitelistApps`""
+$arguments = " -customwhitelist `"$whitelistApps`" -custombloatlist `"$bloatApps`""
 
 # Only add the TasksToRemove parameter if there are tasks to remove
 if ($tasksToRemove) {
