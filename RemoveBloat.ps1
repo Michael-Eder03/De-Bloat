@@ -1759,7 +1759,7 @@ if ($mcafeeinstalled -eq "true") {
     ### Download McAfee Consumer Product Removal Tool ###
     write-output "Downloading McAfee Removal Tool"
     # Download Source
-    $URL = 'https://raw.githubusercontent.com/Michael-Eder03/De-Bloat/main/mcafeeclean.zip'
+    $URL = 'https://github.com/Michael-Eder03/De-Bloat/raw/main/mcafeeclean.zip'
 
     # Set Save Directory
     $destination = 'C:\ProgramData\Debloat\mcafee.zip'
@@ -1778,7 +1778,7 @@ if ($mcafeeinstalled -eq "true") {
     ### Download McAfee Consumer Product Removal Tool ###
     write-output "Downloading McAfee Removal Tool"
     # Download Source
-    $URL = 'https://raw.githubusercontent.com/Michael-Eder03/De-Bloat/main/mccleanup.zip'
+    $URL = 'https://github.com/Michael-Eder03/De-Bloat/raw/main/mccleanup.zip'
 
     # Set Save Directory
     $destination = 'C:\ProgramData\Debloat\mcafeenew.zip'
